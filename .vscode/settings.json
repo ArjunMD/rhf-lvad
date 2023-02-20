@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/eff5d62f-038e-4780-beaa-3a0564d31d30/AppServices/subscriptions/eff5d62f-038e-4780-beaa-3a0564d31d30/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/rhf-lvad",
+    "appService.deploySubpath": "."
+}
