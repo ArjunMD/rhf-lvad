@@ -28,14 +28,15 @@ def predict():
     bun = float(request.form['bun']) if request.form['bun'] else 15
     gfr = float(request.form['gfr']) if request.form['gfr'] else 100
 
-
     input_data = np.array([[intermacs, meld, inotropes, hemoglobin, race, smoking, rap, ast, bun, gfr]])
     prediction = str((model.predict_proba(input_data)[0][1]*100).round(2)) + '%'
 
-
+    plt.clf() #Clear previous figure
     shap_values = explainer(input_data)
     shap.plots.waterfall(shap_values[0], show=False)
+    
     plt.savefig('static/shap_plot.png', bbox_inches='tight')
+
 
 
     print(prediction)
