@@ -4,17 +4,17 @@ import numpy as np
 import shap
 import matplotlib.pyplot as plt
 
-app = Flask(__name__)
+application = Flask(__name__)
 model = joblib.load('model.pkl')
 explainer = joblib.load('explainer.pkl')
 
 
-@app.route('/', methods=['GET'])
+@application.route('/', methods=['GET'])
 def form():
     return render_template('form.html')
 
 
-@app.route('/', methods=['POST'])
+@application.route('/', methods=['POST'])
 def predict():
 
     intermacs = float(request.form['intermacs']) if request.form['intermacs'] else 6
@@ -44,4 +44,4 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run()
+    application.run()
